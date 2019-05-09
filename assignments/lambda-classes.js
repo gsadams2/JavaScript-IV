@@ -24,9 +24,9 @@ class Instructor extends Person {
   grade(student, subject) {
     return `${student.name} receives a perfect score on ${subject}`;
   }
-  //   report(student) {
-  //     return `${student.gradeYo}`;
-  //   }
+  report(student) {
+    return `${student.gradeYo - Math.random() * 100}`;
+  }
 }
 
 class Student extends Instructor {
@@ -109,6 +109,6 @@ console.log(Josh.standUp("Web20"));
 console.log(Josh.debugsCode(George, "Map and Filter"));
 console.log(Josh.grade(George, "CSS"));
 
-// console.log(Josh.report());
+console.log(Dan.report(George));
 
 console.log(George.graduateMethod());
