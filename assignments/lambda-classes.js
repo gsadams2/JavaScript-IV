@@ -24,6 +24,9 @@ class Instructor extends Person {
   grade(student, subject) {
     return `${student.name} receives a perfect score on ${subject}`;
   }
+  //   report(student) {
+  //     return `${student.gradeYo}`;
+  //   }
 }
 
 class Student extends Instructor {
@@ -32,6 +35,7 @@ class Student extends Instructor {
     this.previousBackground = studentAttrs.previousBackground;
     this.className = studentAttrs.className;
     this.favSubjects = studentAttrs.favSubjects;
+    this.gradeYo = studentAttrs.gradeYo;
   }
   listsSubjects() {
     return `${this.favSubjects}`;
@@ -41,6 +45,13 @@ class Student extends Instructor {
   }
   sprintChallenge(subject) {
     return `${this.name} has begun sprint challenge on ${subject}`;
+  }
+  graduateMethod() {
+    if (`${this.gradeYo}` >= 70) {
+      return `you graduated yo!`;
+    } else {
+      return "you failed bro!";
+    }
   }
 }
 
@@ -73,7 +84,8 @@ const George = new Student({
   age: 26,
   previousBackground: "Finance",
   className: "Web20",
-  favSubjects: ["Coding", "Math", "History", "Finance", "English"]
+  favSubjects: ["Coding", "Math", "History", "Finance", "English"],
+  gradeYo: 100
 });
 
 const Josh = new ProjectManager({
@@ -95,3 +107,8 @@ console.log(George.PRAssignment("CSS"));
 console.log(George.sprintChallenge("Classes"));
 console.log(Josh.standUp("Web20"));
 console.log(Josh.debugsCode(George, "Map and Filter"));
+console.log(Josh.grade(George, "CSS"));
+
+// console.log(Josh.report());
+
+console.log(George.graduateMethod());
